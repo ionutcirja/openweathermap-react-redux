@@ -3,7 +3,7 @@ import ForecastHour from '../forecast-hour';
 
 const ForecastDay = props =>
 	<li className="forecast-day">
-		<p>{props.dayName}</p>
+		<h2>{props.dayName}</h2>
 		<ul className="forecast-hours-list">
 			{
 				props.hoursList.map(item =>

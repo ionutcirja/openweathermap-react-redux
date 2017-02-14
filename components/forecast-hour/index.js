@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 
 const ForecastHour = props =>
 	<li className="forecast-hour">
-		<p>{props.hour}</p>
+		<h3>{props.hour}</h3>
 		<img
 			src={`http://openweathermap.org/img/w/${props.icon}.png`}
 			alt={props.description}
