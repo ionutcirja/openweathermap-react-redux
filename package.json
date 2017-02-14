@@ -57,12 +57,11 @@
     "webpack-dev-server": "~2.3.0",
     "pre-commit": "~1.2.2",
     "nyc": "~10.1.2",
-    "babel-plugin-__coverage__": "~11.0.0"
+    "babel-plugin-istanbul": "~4.0.0"
   },
   "scripts": {
     "start": "node server.js",
-    "test": "./node_modules/.bin/nyc ./node_modules/.bin/_mocha './{,!(node_modules)/**/}*.spec.js'",
-    "coverage": "./node_modules/.bin/nyc --reporter=html npm test",
+    "test": "NODE_ENV=test ./node_modules/.bin/nyc ./node_modules/.bin/_mocha './{,!(node_modules)/**/}*.spec.js'",
     "lint": "./node_modules/.bin/eslint --ignore-path .eslintignore ./ --ext .js",
     "test:watch": "npm test -- --watch"
   },
