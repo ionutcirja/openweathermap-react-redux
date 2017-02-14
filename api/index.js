@@ -11,6 +11,10 @@ function setHeaders(headers) {
 	return Object.assign({}, getDefaultHeaders(), headers);
 }
 
+function computeEndpint(endpoint) {
+	return `${config.API_BASE_URL}${endpoint}&APPID=${config.API_KEY}`;
+}
+
 function endCallback(resolve, reject, error, response) {
 	try {
 		const resObj = response.text ? JSON.parse(response.text) : {};
@@ -28,7 +32,7 @@ function endCallback(resolve, reject, error, response) {
 
 function send(method, endpoint, values, headers) {
 	return new Promise((resolve, reject) => {
-		method(`${config.API_BASE_URL}${endpoint}`)
+		method(computeEndpint(endpoint))
 			.set(setHeaders(headers))
 			.send(values)
 			.end((error, response) => {
@@ -40,7 +44,7 @@ function send(method, endpoint, values, headers) {
 export function get(endpoint, headers = {}) {
 	return new Promise((resolve, reject) => {
 		request
-			.get(`${config.API_BASE_URL}${endpoint}`)
+			.get(computeEndpint(endpoint))
 			.set(setHeaders(headers))
 			.end((error, response) => {
 				endCallback(resolve, reject, error, response);
@@ -51,7 +55,7 @@ export function get(endpoint, headers = {}) {
 export function del(endpoint, headers = {}) {
 	return new Promise((resolve, reject) => {
 		request
-			.del(`${config.API_BASE_URL}${endpoint}`)
+			.del(computeEndpint(endpoint))
 			.set(setHeaders(headers))
 			.end((error, response) => {
 				endCallback(resolve, reject, error, response);
