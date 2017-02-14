@@ -4,7 +4,7 @@ import * as actionTypes from '../constants/action-types';
 
 export function getWeatherData() {
 	return (dispatch) => {
-		return api.fetch('weather')
+		return api.fetch()
 			.then((data) => {
 				dispatch({ type: actionTypes.WEATHER_UPDATED, data });
 			})
