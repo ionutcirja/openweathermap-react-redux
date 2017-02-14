@@ -1,5 +1,6 @@
 /* eslint-disable arrow-body-style */
 import { connect } from 'react-redux';
+import { groupBy } from 'lodash';
 import Forecast from '../../components/forecast';
 
 const mapStateToProps = (state) => {
@@ -9,8 +10,22 @@ const mapStateToProps = (state) => {
 		return {};
 	}
 
+	const list = groupBy(
+		weather.list.map(item =>
+			Object.assign(
+				{},
+				item,
+				{
+					day: item.dt_txt.split(' ')[0],
+					hour: item.dt_txt.split(' ')[1]
+				}
+			)),
+		'day'
+	);
+
 	return {
-		cityName: state.weather.city.name
+		cityName: weather.city.name,
+		list
 	};
 };
 
