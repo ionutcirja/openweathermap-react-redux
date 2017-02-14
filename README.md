@@ -9,5 +9,5 @@ Test using ReactJS and Redux flux implementation
 TODO
 
 1. search for location via a form
-2. update data automatically
+2. refresh data automatically
 3. add routes for location query
