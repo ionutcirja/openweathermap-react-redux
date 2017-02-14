@@ -27,7 +27,7 @@ describe('Forecast component', () => {
 	};
 
 	describe('render', () => {
-		it('should render n h1 one containing the city name', () => {
+		it('should render an h1 tag containing the city name', () => {
 			const wrapper = shallow(<Forecast cityName="London" list={list} />);
 			const headline = wrapper.find('h1');
 			expect(headline.text()).to.equal('London');
