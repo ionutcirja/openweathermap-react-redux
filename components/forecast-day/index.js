@@ -3,7 +3,7 @@ import ForecastHour from '../forecast-hour';
 
 const ForecastDay = props =>
 	<li className="forecast-day">
-		<h2>{props.dayName}</h2>
+		<h2>{props.day}</h2>
 		<ul className="forecast-hours-list">
 			{
 				props.hoursList.map(item =>
@@ -22,7 +22,7 @@ const ForecastDay = props =>
 	</li>;
 
 ForecastDay.propTypes = {
-	dayName: PropTypes.string.isRequired,
+	day: PropTypes.string.isRequired,
 	hoursList: PropTypes.array.isRequired
 };
 
