@@ -17,7 +17,7 @@ describe('Forecast container', () => {
 			const component = wrapper.find('Forecast');
 			const props = component.props();
 			expect(component.length).to.equal(1);
-			expect(props.cityName).to.eql('');
+			expect(props.city).to.eql('');
 			expect(props.list).to.eql({});
 		});
 
@@ -44,7 +44,7 @@ describe('Forecast container', () => {
 			const component = wrapper.find('Forecast');
 			const props = component.props();
 			expect(component.length).to.equal(1);
-			expect(props.cityName).to.eql('London');
+			expect(props.city).to.eql('London');
 			expect(props.list).to.eql({
 				'2017-02-14': [
 					{

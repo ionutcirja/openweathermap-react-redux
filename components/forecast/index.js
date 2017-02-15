@@ -3,7 +3,7 @@ import ForecastDay from '../forecast-day';
 
 const Forecast = props =>
 	<section className="forecast">
-		<h1>{props.cityName}</h1>
+		<h1>{props.city}</h1>
 		<ul className="forecast-days-list">
 			{
 				Object.keys(props.list).length > 0 &&
@@ -11,7 +11,7 @@ const Forecast = props =>
 					(
 						<ForecastDay
 							key={key}
-							dayName={key}
+							day={key}
 							hoursList={props.list[key]}
 						/>
 					)
@@ -21,12 +21,12 @@ const Forecast = props =>
 	</section>;
 
 Forecast.propTypes = {
-	cityName: PropTypes.string.isRequired,
+	city: PropTypes.string.isRequired,
 	list: PropTypes.object.isRequired
 };
 
 Forecast.defaultProps = {
-	cityName: '',
+	city: '',
 	list: {}
 };
 

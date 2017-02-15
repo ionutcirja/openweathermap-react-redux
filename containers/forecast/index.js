@@ -24,7 +24,7 @@ const mapStateToProps = (state) => {
 	);
 
 	return {
-		cityName: weather.city.name,
+		city: weather.city.name,
 		list
 	};
 };
