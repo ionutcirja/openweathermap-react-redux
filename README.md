@@ -1,13 +1,23 @@
-# openweathermap-react-redux
+# Openweathermap
 
-Test using ReactJS and Redux flux implementation
+## Install
 
-1. Run npm install
-2. Run npm start and open http://localhost:3000/ in a browser
-3. Run npm test to run unit tests
+```
+yarn install
+```
 
-TODO
+## Startup
 
-1. search for location via a form
-2. refresh data automatically
-3. add routes for location query
+In order to run the client in development mode, open a terminal window and type (any change into the code will rebuild the code):
+```
+yarn start
+```
+
+Now open http://localhost:8080/ in a browser (preferably Chrome).
+
+## Tests
+
+To run the tests and check the coverage run
+```
+yarn test
+```
