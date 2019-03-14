@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const HourItem = styled.li`
+export const Hour = styled.li`
   display: inline-block;
   list-style-type: none;
   margin-right: 40px;

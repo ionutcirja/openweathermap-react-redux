@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
-import Hour from '../hour';
-import { DayItem } from './style';
+import ForecastHour from '../hour';
+import { Day } from './style';
 
 type Props = {
   day: string,
@@ -17,15 +17,15 @@ type Props = {
   }>,
 };
 
-const Day = ({
+const ForecastDay = ({
   day,
   hoursList,
 }: Props) => (
-  <DayItem>
+  <Day>
     <h2>{day}</h2>
     <ul className="forecast-hours-list">
       {hoursList.map(item => (
-        <Hour
+        <ForecastHour
           key={item.hour}
           hour={item.hour}
           icon={item.weather[0].icon}
@@ -34,7 +34,7 @@ const Day = ({
         />
       ))}
     </ul>
-  </DayItem>
+  </Day>
 );
 
-export default Day;
+export default ForecastDay;

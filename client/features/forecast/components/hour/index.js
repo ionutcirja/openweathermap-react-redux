@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import { HourItem, Details } from './style';
+import { Hour, Details } from './style';
 
 type Props = {
   hour: string,
@@ -11,7 +11,7 @@ type Props = {
   pressure: number,
 };
 
-const Hour = ({
+const ForecastHour = ({
   hour,
   icon,
   description,
@@ -19,7 +19,7 @@ const Hour = ({
   humidity,
   pressure,
 }: Props) => (
-  <HourItem>
+  <Hour>
     <h3>{hour}</h3>
     <img
       src={`http://openweathermap.org/img/w/${icon}.png`}
@@ -30,8 +30,8 @@ const Hour = ({
       <Details>{`Humidity: ${humidity}`}</Details>
       <Details>{`Pressure: ${pressure}`}</Details>
     </p>
-  </HourItem>
+  </Hour>
 );
 
 
-export default Hour;
+export default ForecastHour;
