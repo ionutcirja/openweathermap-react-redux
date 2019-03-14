@@ -18,7 +18,7 @@ type Props = {
   },
 };
 
-const ForecastHour = ({
+export const Component = ({
   hour,
   icon,
   description,
@@ -57,4 +57,4 @@ const ForecastHour = ({
   </Hour>
 );
 
-export default withTheme(ForecastHour);
+export default withTheme(Component);

@@ -1,86 +1,28 @@
 import React from 'react';
-import { expect } from 'chai';
 import { shallow } from 'enzyme';
-import ForecastHour from '..';
+import { Component } from '..';
 
 describe('ForecastHour component', () => {
+  const propsToRender = {
+    hour: '12:00',
+    icon: 'icon',
+    description: 'info',
+    temp: 100,
+    humidity: 200,
+    pressure: 1000,
+    theme: {
+      colours: {
+        grey: 'grey',
+        greyLight: 'grey-light',
+      },
+    },
+  };
+
 	describe('render', () => {
-		it('should render an h3 tag containing the hour', () => {
-			const wrapper = shallow(
-				<ForecastHour
-					hour="18:00"
-					icon="1.png"
-					description="info"
-					temp={1}
-					humidity={2}
-					pressure={3}
-				/>
-			);
-			const headline = wrapper.find('h3');
-			expect(headline.text()).to.equal('18:00');
-		});
-
-		it('should render an img tag containing the weather icon', () => {
-			const wrapper = shallow(
-				<ForecastHour
-					hour="18:00"
-					icon="ico"
-					description="info"
-					temp={1}
-					humidity={2}
-					pressure={3}
-				/>
-			);
-			const img = wrapper.find('img');
-			const props = img.props();
-			expect(props.src).to.equal('http://openweathermap.org/img/w/ico.png');
-			expect(props.alt).to.equal('info');
-		});
-
-		it('should render a span tag containing the temperature', () => {
-			const wrapper = shallow(
-				<ForecastHour
-					hour="18:00"
-					icon="1.png"
-					description="info"
-					temp={1}
-					humidity={2}
-					pressure={3}
-				/>
-			);
-			const span = wrapper.find('span').at(0);
-			expect(span.text()).to.contain('1');
-		});
-
-		it('should render a span tag containing the humidity', () => {
-			const wrapper = shallow(
-				<ForecastHour
-					hour="18:00"
-					icon="1.png"
-					description="info"
-					temp={1}
-					humidity={2}
-					pressure={3}
-				/>
-			);
-			const span = wrapper.find('span').at(1);
-			expect(span.text()).to.contain('2');
-		});
-
-		it('should render a span tag containing the pressure', () => {
-			const wrapper = shallow(
-				<ForecastHour
-					hour="18:00"
-					icon="1.png"
-					description="info"
-					temp={1}
-					humidity={2}
-					pressure={3}
-				/>
-			);
-			const span = wrapper.find('span').at(2);
-			expect(span.text()).to.contain('3');
+		it('should render the hour, an icon representing the weather condition'
+      + ' and temperature, humidity and pressure values', () => {
+			const wrapper = shallow(<Component {...propsToRender} />);
+			expect(wrapper).toMatchSnapshot();
 		});
 	});
 });
-

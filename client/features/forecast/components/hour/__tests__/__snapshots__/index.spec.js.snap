@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ForecastHour component render should render the hour, an icon representing the weather condition and temperature, humidity and pressure values 1`] = `
+<Hour>
+  <Title
+    colour="grey"
+  >
+    12:00
+  </Title>
+  <img
+    alt="info"
+    src="http://openweathermap.org/img/w/icon.png"
+  />
+  <p>
+    <Details
+      colour="grey"
+    >
+      Temperature: 100
+    </Details>
+    <Details
+      colour="grey"
+    >
+      Humidity: 200
+    </Details>
+    <Details
+      colour="grey"
+    >
+      Pressure: 1000
+    </Details>
+  </p>
+</Hour>
+`;
