@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
-import {Hour, Title, Details} from './style';
+import { withTheme } from 'styled-components';
+import { Hour, Title, Details } from './style';
 
 type Props = {
   hour: string,
@@ -9,6 +10,12 @@ type Props = {
   temp: number,
   humidity: number,
   pressure: number,
+  theme: {
+    colours: {
+      grey: string,
+      greyLight: string,
+    },
+  },
 };
 
 const ForecastHour = ({
@@ -18,9 +25,12 @@ const ForecastHour = ({
   temp,
   humidity,
   pressure,
+  theme,
 }: Props) => (
   <Hour>
-    <Title>
+    <Title
+      colour={theme.colours.grey}
+    >
       {hour}
     </Title>
     <img
@@ -28,17 +38,23 @@ const ForecastHour = ({
       alt={description}
     />
     <p>
-      <Details>
+      <Details
+        colour={theme.colours.grey}
+      >
         {`Temperature: ${temp}`}
       </Details>
-      <Details>
+      <Details
+        colour={theme.colours.grey}
+      >
         {`Humidity: ${humidity}`}
       </Details>
-      <Details>
+      <Details
+        colour={theme.colours.grey}
+      >
         {`Pressure: ${pressure}`}
       </Details>
     </p>
   </Hour>
 );
 
-export default ForecastHour;
+export default withTheme(ForecastHour);

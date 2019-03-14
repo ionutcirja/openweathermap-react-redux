@@ -1,5 +1,6 @@
 // @flow
 import React from 'react';
+import { withTheme } from 'styled-components';
 import ForecastHour from '../hour';
 import { Day, Title } from './style';
 
@@ -15,14 +16,22 @@ type Props = {
       [key: string]: any,
     },
   }>,
+  theme: {
+    colours: {
+      greyDark: string,
+    }
+  }
 };
 
 const ForecastDay = ({
   day,
   hoursList,
+  theme,
 }: Props) => (
   <Day>
-    <Title>
+    <Title
+      colour={theme.colours.greyDark}
+    >
       {day}
     </Title>
     <ul>
@@ -39,4 +48,4 @@ const ForecastDay = ({
   </Day>
 );
 
-export default ForecastDay;
+export default withTheme(ForecastDay);

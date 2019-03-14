@@ -9,4 +9,5 @@ export const Day = styled.li`
 export const Title = styled.h2`
   font-size: 2rem;
   line-height: 2.2rem;
+  color: ${({ colour }) => colour};
 `;
