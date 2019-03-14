@@ -5,3 +5,7 @@ export const Day = styled.li`
   list-style-type: none;
   margin-bottom: 60px;
 `;
+
+export const Title = styled.h2`
+  font-size: 2rem
+`;
