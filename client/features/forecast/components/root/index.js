@@ -30,7 +30,7 @@ type Props = {
   },
 };
 
-const Forecast = ({
+export const Component = ({
   location,
   list,
   theme,
@@ -59,4 +59,4 @@ const Forecast = ({
   </section>
 );
 
-export default withTheme(Forecast);
+export default withTheme(Component);

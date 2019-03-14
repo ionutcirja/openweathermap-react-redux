@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Forecast component render should render a list of days forecast if list is list prop is not empty 1`] = `
+<section>
+  <ul>
+    <WithTheme(ForecastDay)
+      day="2017-02-14"
+      hoursList={
+        Array [
+          Object {
+            "day": "2017-02-14",
+            "dt_txt": "2017-02-14 18:00:00",
+            "hour": "18:00:00",
+          },
+          Object {
+            "day": "2017-02-14",
+            "dt_txt": "2017-02-14 21:00:00",
+            "hour": "21:00:00",
+          },
+        ]
+      }
+      key="2017-02-14"
+    />
+    <WithTheme(ForecastDay)
+      day="2017-02-15"
+      hoursList={
+        Array [
+          Object {
+            "day": "2017-02-15",
+            "dt_txt": "2017-02-15 18:00:00",
+            "hour": "18:00:00",
+          },
+        ]
+      }
+      key="2017-02-15"
+    />
+  </ul>
+</section>
+`;
+
+exports[`Forecast component render should render the location if location prop value is truthy 1`] = `
+<section>
+  <Title
+    colour="grey-darker"
+  >
+    London
+  </Title>
+</section>
+`;
