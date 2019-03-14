@@ -164,6 +164,7 @@ const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     font-family: 'Helvetica', sans-serif;
     font-size: 10px;
+    line-height: 18px;
   }
   
   *:focus {
