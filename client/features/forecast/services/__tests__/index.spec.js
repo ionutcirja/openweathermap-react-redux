@@ -2,7 +2,7 @@ import chai, { expect } from 'chai';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
 import * as api from './fetch';
-import * as lowLevelApi from '../index';
+import * as lowLevelApi from '..';
 
 chai.use(sinonChai);
 

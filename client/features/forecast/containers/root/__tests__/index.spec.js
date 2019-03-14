@@ -3,7 +3,7 @@ import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
-import Forecast from '../index';
+import Forecast from '..';
 
 describe('Forecast container', () => {
 	const middlewares = [thunk];

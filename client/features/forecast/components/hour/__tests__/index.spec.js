@@ -1,7 +1,7 @@
 import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
-import ForecastHour from '../index';
+import ForecastHour from '..';
 
 describe('ForecastHour component', () => {
 	describe('render', () => {

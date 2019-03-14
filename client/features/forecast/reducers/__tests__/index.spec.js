@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import deepFreeze from 'deep-freeze';
-import reducer from './weather';
+import reducer from '..';
 
 describe('Weather reducer', () => {
 	it('should return the default state if the action type is not defined', () => {
