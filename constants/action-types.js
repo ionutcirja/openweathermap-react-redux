@@ -1,1 +1,0 @@
-export const WEATHER_UPDATED = 'WEATHER_UPDATED';
