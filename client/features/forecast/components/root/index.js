@@ -1,15 +1,49 @@
 // @flow
 import React from 'react';
+import { withTheme } from 'styled-components';
 import ForecastDay from '../day/index';
+import { Title } from './style';
 
 type Props = {
   list: {
-    [key: string]: any,
+    [key: string]: {
+      day: string,
+      hoursList: Array<{
+        hour: string,
+        weather: Array<{
+          icon: string,
+          description: string,
+        }>,
+        main: {
+          temp: number,
+          humidity: number,
+          pressure: number,
+        },
+      }>,
+    },
+  },
+  location: string,
+  theme: {
+    colours: {
+      greyDarker: string,
+    },
   },
 };
 
-const Forecast = ({ list }: Props) => (
+const Forecast = ({
+  location,
+  list,
+  theme,
+}: Props) => (
   <section>
+    {location
+    && (
+      <Title
+        colour={theme.colours.greyDarker}
+      >
+        {location}
+      </Title>
+    )}
     {Object.keys(list).length > 0
       && (
         <ul>
@@ -25,4 +59,4 @@ const Forecast = ({ list }: Props) => (
   </section>
 );
 
-export default Forecast;
+export default withTheme(Forecast);
