@@ -10,18 +10,16 @@
     "**/*.js",
     "!**/node_modules/**",
     "!**/style/**",
-    "!**/routes/**",
-    "!index.js",
     "!**/config/**",
     "!**/types/**",
     "!coverage/**",
     "!webpack.dev.config.js",
     "!client/index.js",
-    "!client/index.js",
     "!client/store/**",
     "!client/reducers/**",
     "!client/sagas/**",
-    "!client/style/**"
+    "!client/style/**",
+    "!client/**/style.js"
   ],
   "testMatch": [
     "**/__tests__/?(*.)(spec|test).js"
