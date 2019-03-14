@@ -13,7 +13,9 @@ type Props = {
       description: string,
     }>,
     main: {
-      [key: string]: any,
+      temp: number,
+      humidity: number,
+      pressure: number,
     },
   }>,
   theme: {

@@ -11,9 +11,18 @@ export type Action = {
 };
 
 export type Forecast = {
-  list: {
-    [key: string]: any,
-  },
+  +list: Array<{
+    +dt_txt: string,
+    +main: {
+      +temp: number,
+      +humidity: number,
+      +pressure: number,
+    },
+    +weather: Array<{
+      +icon: string,
+      +description: string,
+    }>,
+  }>,
 };
 
 export type State = {
