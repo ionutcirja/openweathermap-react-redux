@@ -9,13 +9,6 @@ describe('Forecast container', () => {
     },
   };
 
-	describe('render', () => {
-		it('should render a Forecast component', () => {
-			const wrapper = shallow(<Wrapper {...propsToRender} />);
-			expect(wrapper).toMatchSnapshot();
-		});
-	});
-
 	describe('componentDidMount', () => {
     it('should call forecastRequest action', () => {
       shallow(<Wrapper {...propsToRender} />);
