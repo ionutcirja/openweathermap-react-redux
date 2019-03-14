@@ -1,23 +1,13 @@
-import chai, { expect } from 'chai';
-import sinon from 'sinon';
-import sinonChai from 'sinon-chai';
-import * as api from './fetch';
-import * as lowLevelApi from '..';
+import axios from 'axios';
+import { fetchForecast } from '..';
 
-chai.use(sinonChai);
+jest.mock('axios');
 
-describe('Api', () => {
-	const sandbox = sinon.sandbox.create();
-
-	afterEach(() => {
-		sandbox.restore();
-	});
-
-	describe('fetch', () => {
-		it('should call the low level api get method and fetch the correct url', () => {
-			sandbox.stub(lowLevelApi, 'get');
-			api.fetch();
-			expect(lowLevelApi.get.args[0][0]).to.contain('?q=London');
-		});
-	});
+describe('Forecast services', () => {
+  describe('fetchForecast', () => {
+    it('should do a get request', () => {
+      fetchForecast('London');
+      expect(axios.get.mock.calls[0][0]).toContain('&q=London');
+    });
+  });
 });
