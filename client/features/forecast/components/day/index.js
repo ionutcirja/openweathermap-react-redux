@@ -22,7 +22,9 @@ const ForecastDay = ({
   hoursList,
 }: Props) => (
   <Day>
-    <Title>{day}</Title>
+    <Title>
+      {day}
+    </Title>
     <ul>
       {hoursList.map(item => (
         <ForecastHour
