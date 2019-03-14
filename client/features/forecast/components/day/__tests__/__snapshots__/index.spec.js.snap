@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ForecastDay component render should render the day and a list of hours forecast 1`] = `
+<Day>
+  <Title
+    colour="grey-dark"
+  >
+    Sunday
+  </Title>
+  <ul>
+    <WithTheme(Component)
+      description="info1"
+      hour="18:00"
+      humidity={2}
+      icon="1.png"
+      key="18:00"
+      pressure={3}
+      temp={1}
+    />
+    <WithTheme(Component)
+      description="info2"
+      hour="21:00"
+      humidity={5}
+      icon="2.png"
+      key="21:00"
+      pressure={6}
+      temp={3}
+    />
+  </ul>
+</Day>
+`;

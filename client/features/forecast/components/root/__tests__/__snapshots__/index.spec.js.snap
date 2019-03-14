@@ -3,7 +3,7 @@
 exports[`Forecast component render should render a list of days forecast if list is list prop is not empty 1`] = `
 <section>
   <ul>
-    <WithTheme(ForecastDay)
+    <WithTheme(Component)
       day="2017-02-14"
       hoursList={
         Array [
@@ -21,7 +21,7 @@ exports[`Forecast component render should render a list of days forecast if list
       }
       key="2017-02-14"
     />
-    <WithTheme(ForecastDay)
+    <WithTheme(Component)
       day="2017-02-15"
       hoursList={
         Array [

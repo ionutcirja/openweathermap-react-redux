@@ -25,7 +25,7 @@ type Props = {
   }
 };
 
-const ForecastDay = ({
+export const Component = ({
   day,
   hoursList,
   theme,
@@ -50,4 +50,4 @@ const ForecastDay = ({
   </Day>
 );
 
-export default withTheme(ForecastDay);
+export default withTheme(Component);
