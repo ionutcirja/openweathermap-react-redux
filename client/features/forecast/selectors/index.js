@@ -3,6 +3,8 @@ import { createSelector } from 'reselect';
 import { groupBy } from 'lodash';
 import type { State } from '../../../types';
 
+export const forecastLocationSelector = (state: State) => (state.forecast.location || {}).name;
+
 export const forecastListSelector = (state: State) => state.forecast.list || [];
 
 export const forecastGroupedListSelector = createSelector(

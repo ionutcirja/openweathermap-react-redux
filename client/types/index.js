@@ -11,6 +11,9 @@ export type Action = {
 };
 
 export type Forecast = {
+  +location: {
+    +name: string,
+  },
   +list: Array<{
     +dt_txt: string,
     +main: {

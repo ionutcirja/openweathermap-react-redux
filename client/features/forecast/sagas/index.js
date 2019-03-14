@@ -13,7 +13,10 @@ export function* requestForecast(action: Action): Generator<*, *, *> {
   try {
     const response = yield call(fetchForecast, location);
     const { city, list } = response.data;
-    yield put(forecastResponse({ city, list }));
+    yield put(forecastResponse({
+      location: city,
+      list,
+    }));
   } catch (error) {
     yield put(forecastError(error));
   }

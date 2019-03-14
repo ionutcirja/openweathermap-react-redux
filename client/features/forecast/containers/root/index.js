@@ -5,7 +5,10 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import type { State } from '../../../../types';
 import * as Actions from '../../actions';
-import { forecastGroupedListSelector } from '../../selectors';
+import {
+  forecastGroupedListSelector,
+  forecastLocationSelector,
+} from '../../selectors';
 import Forecast from '../../components/root';
 
 type Props = {
@@ -13,8 +16,23 @@ type Props = {
     forecastRequest: Function,
   },
   list: {
-    [key: string]: any,
+    [key: string]: {
+      day: string,
+      hoursList: Array<{
+        hour: string,
+        weather: Array<{
+          icon: string,
+          description: string,
+        }>,
+        main: {
+          temp: number,
+          humidity: number,
+          pressure: number,
+        },
+      }>,
+    },
   },
+  location: string,
 };
 
 class Wrapper extends Component<Props> {
@@ -32,7 +50,7 @@ class Wrapper extends Component<Props> {
 }
 
 const mapStateToProps = (state: State) => ({
-  ...state.forecast,
+  location: forecastLocationSelector(state),
   list: forecastGroupedListSelector(state),
 });
 
