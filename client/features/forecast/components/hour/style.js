@@ -10,9 +10,11 @@ export const Details = styled.span`
   display: block;
   margin-bottom: 10px;
   font-size: 1rem;
+  line-height: 1.2rem;
 `;
 
 export const Title = styled.h3`
   margin: 30px 0 10px;
   font-size: 1.4rem;
+  line-height: 1.6rem;
 `;

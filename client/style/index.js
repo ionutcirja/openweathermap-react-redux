@@ -165,6 +165,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Helvetica', sans-serif;
     font-size: 10px;
     line-height: 18px;
+    padding: 40px;
   }
   
   *:focus {
