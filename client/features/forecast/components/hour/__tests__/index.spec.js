@@ -18,11 +18,11 @@ describe('ForecastHour component', () => {
     },
   };
 
-	describe('render', () => {
-		it('should render the hour, an icon representing the weather condition'
+  describe('render', () => {
+    it('should render the hour, an icon representing the weather condition'
       + ' and temperature, humidity and pressure values', () => {
-			const wrapper = shallow(<Component {...propsToRender} />);
-			expect(wrapper).toMatchSnapshot();
-		});
-	});
+      const wrapper = shallow(<Component {...propsToRender} />);
+      expect(wrapper).toMatchSnapshot();
+    });
+  });
 });

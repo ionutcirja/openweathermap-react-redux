@@ -2,13 +2,13 @@ import deepFreeze from 'deep-freeze';
 import reducer from '..';
 
 describe('Forecast reducers', () => {
-	it('should return the default state if the action type is not defined', () => {
-		const initialState = { someProp: 'some value' };
-		deepFreeze(initialState);
-		expect(reducer(initialState, { type: 'UNDEFINED_ACTION' })).toEqual(initialState);
-	});
+  it('should return the default state if the action type is not defined', () => {
+    const initialState = { someProp: 'some value' };
+    deepFreeze(initialState);
+    expect(reducer(initialState, { type: 'UNDEFINED_ACTION' })).toEqual(initialState);
+  });
 
-	it('should return a new state containing a true loading prop and a false error prop'
+  it('should return a new state containing a true loading prop and a false error prop'
     + ' if the action type is FORECAST_REQUEST', () => {
     const initialState = {
       someProp: 'some value',
