@@ -35,7 +35,7 @@ type Props = {
   location: string,
 };
 
-class Wrapper extends Component<Props> {
+export class Wrapper extends Component<Props> {
   componentDidMount() {
     const { actions } = this.props;
     actions.forecastRequest({ location: 'London' });
