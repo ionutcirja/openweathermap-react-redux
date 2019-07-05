@@ -8,7 +8,9 @@
     "test": "jest --config jest.config.json",
     "test:watch": "jest --watch --config jest.config.json",
     "test:watchAll": "jest --watchAll --config jest.config.json",
-    "flow": "flow"
+    "flow": "flow",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "pre-commit": [
     "lint:js",
@@ -38,7 +40,8 @@
     "stylelint": "^9.10.1",
     "stylelint-config-recommended": "^2.1.0",
     "stylelint-config-styled-components": "^0.1.1",
-    "stylelint-processor-styled-components": "^1.5.2"
+    "stylelint-processor-styled-components": "^1.5.2",
+    "snyk": "^1.192.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
@@ -64,5 +67,6 @@
     "webpack": "^4.25.1",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.10"
-  }
+  },
+  "snyk": true
 }
